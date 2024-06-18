@@ -1,0 +1,443 @@
+
+
+Selenium is suite / bundle of test automation tools
+
+Components
+
+1. IDE
+2. Grid
+3. RC
+4. WebDriver
+
+
+WebDriver
+
+- Is test automation tool to test Web Based Application / Appliation that works on browser(Web Sites)
+- It is an interface of Java
+- It is an API
+
+Pre-Requisite for WebDriver
+
+1. Windows 10
+2. Updated Browser
+3. Any editor
+	- Eclipse (Neon on-words)
+4. Java (Minimum 11)
+5. Selenium .jar File
+
+
+Create 2 folders
+
+1. YourName_Selenium_Demos
+2. Selenium Jar Files
+
+==========================================
+Selenium Configuration
+==========================================
+Right Click on Project -> Build Path -> Configure Build Path -> Libraries -> Click on ClassPath -> Add External Jars -> Select the downloaded Selenium Server jar file -> Open -> Apply and Close
+
+
+
+===========================================================
+Selenium WebDriver Notes
+===========================================================
+1. Open Browser => Create object of WebDriver interface
+2. get() => Open a url
+3. driver.manage().window().maximize() => This method will maximize the browser window
+4. close() => Close the browser window which is opened by WebDriver object.
+5. getTitle() => Returns title of the Web Page (String)
+6. getCurrentUrl() => Returns the url of Web Page (String)
+7. getPageSource() => 
+8. findElement() => Read / Find the control on the web page. IT LOCATES FIRST OCCURANCE (WebElement)
+9. findElements() => Read / finds multipl controls on the page (List<WebElement>)
+10. getWindowHandles() => Return id / name of windows those have been opened by WebDriver object (Set<String>)
+11. quit() => Closes all the windows those are opened by current WebDriver object
+
+==========================================================
+Locators
+==========================================================
+Used to locate / read any control / Web Elements / Web Controls on the web page
+
+1. Name 
+2. Id
+3. ClassName
+4. CssSelector
+	a. Using Attribute
+		tagName[attribute="value"][attrubute2="value']
+		input[data-testid="royal_email"]
+	b. Using Special Characters
+		i. ^ => Starts With
+			tagName[attribute$="value"]
+		ii. $ => Ends With
+		iii. * => Contains
+5. XPath
+	
+6. LinkText
+7. PartialLinkText
+8. TagName
+9. RelativeLocator
+
+===========================================
+WebElement Methods
+===========================================
+1. sendKeys() => Used to enter some text in the textbox
+2. click() => Used to click on the control
+3. getText() => Used to return the text on the control (String)
+4. isSelected() => Used to check whether the control (Radio Button or check box) is selected or not (Boolean)
+5. getAttribute() => Returns the value of any attribute of the WebElement (String)
+
+=============================
+Exceptions in Selenium
+=============================
+1. InvalidArgumentException => URL is not in the correct format
+2. NoSuchElementException => 
+	a. Element is not presnt on the page
+	b. The value of locator is wrong
+	c. Synchronization Issue
+
+3. TimeOutException => If the specific URL is not geting loaded in 30 Seconds
+4. NoAlertPresentException => Such alert is not present on the page
+
+
+
+
+
+
+
+
+===========================
+XPath
+===========================
+XML Path
+1. Absolute XPath
+Pattankodoli Bus Stand -> Take Right Turn -> Water Tank -> Hupare Nagar 9th Lane -> Ankush's Home
+html
+
+2. Relative XPath
+
+
+
+
+
+
+
+<tag attribute="value">Inner Text</tag>
+
+
+
+===================================
+Handling Dropdown list
+===================================
+1. Display selected country
+2. Display total no of countries
+3. Display list of all the countries
+4. Select Spain from the list
+5. Display selected country
+
+Select class => Used to handle drop down list. (The control should have select tag)
+
+Methods:
+1. getFirstSelectedOption() => Return selected option from drplist (WebElement)
+2. getOptions() => Returns list of all the elements in drop down list (List<WebElement>)
+3. selectByVisibleText() =>
+4. selectByValue() => 
+5. selectByIndex() => 
+
+
+================================
+Synchronization
+================================
+Process of adjusting speed of tool with speed of application
+
+1. Thread.Sleep()
+	a. It is taking mandatory delay
+	b. It is applicable to Single statement only
+2. ImplicitWait (implicitlyWait)
+	a. It dosent take mandatory delay
+	b. It is applicable throughout the script
+3. ExplicitWait (WebDriverWait)
+	a. It dosent take mandatory delay
+	b. It is applicable to Single statement only
+4. FluentWait
+	a. It dosent take mandatory delay
+	b. It is applicable to Single statement only
+	c. It can handle a specific type of exception
+	
+	w - withTimeout
+	i - ignoring
+	p - pollingEvery
+	u - until
+
+5. PageLoadTimeout
+
+
+===============================
+Assignments
+===============================
+1. DemoQA Registration From
+2. ExplicitWait & Fluent Wait on RedBus.com
+3. https://dash.bling-center.com/platform/signIn.html
+4. Display list of all the company name
+
+=============================
+Handling Table
+=============================
+1. Display all column headers
+2. Display total no of rows
+3. Display any row randomly
+
+
+=============================
+Handling Alert
+=============================
+If you are not able to inspect Ok or Cancel button, then only it is an ALERT
+
+Alert Interface is used to handle alert in Selenium.
+
+Methods
+1. getTest() => Return the text on Alert (String)
+2. accept() => Click on Ok button / Hit Enter
+3. dismiss() => Click on Cancel button / Hit Escape key
+4. sendKeys() => Will enter some text on Alert (Prompt Box)
+
+============================
+Mouse Actions
+============================
+1. Left Click
+2. Right Click
+3. Double Click
+4. Drag and Drop
+5. Drag
+6. Hover
+
+Actions Class => Used to handle above mouse actions
+
+Methods
+
+1. moveToElement()
+2. doubleClick()
+3. contextClick()
+4. dragAndDrop()
+
+WebElement.getScreenshotAs(OutputType.FILE);
+
+=========================================================================================
+TestNG
+=========================================================================================
+Testing Framework => Set of rules, code, classes, interfaces to reduce you script
+
+NG => Next Generation
+
+Features
+1. Use annotations
+2. Get a report
+	a. Normal Report
+	b. HTML Report
+3. Reduce your script
+4. Implementation of multiple frameworks
+	a. Liner framework
+	b. Modular framework
+	c. Keyword driven framework
+	d. Page Object Model
+	e. Data Driven Framework
+5. Implement Data Driven Testing
+6. Prioritarization of test cases
+7. Skip / Execute single / multiple tests
+8. Execute / Skip tests in groups
+
+=======================
+Annotations in TestNG
+=======================
+1. @Test => Only this method is treated as Test Case
+2. @BeforeTest => This is the method that executes ONLY ONCE BEFORE EXECUTING 1ST TEST CASE
+3. @AfterTest => This is the method that executes ONLY ONCE AFTER EXECUTING LAST TEST CASE
+4. @BeforeMethod => This is the method that executed BEFORE EVERY TEST CASE
+5. @AfterMethod => This is the method that executed AFTER EVERY TEST CASE
+6. @DataProvider => Used to pass data to the test case in the form of 2D Array
+7. @Parameters => Used to get parameters from XML File
+
+
+BeforeTest
+	BeforeMethod
+		Test 1
+	AfterMethod
+	BeforeMethod
+		Test 2
+	AfterMethod
+	BeforeMethod
+		Test 3
+	AfterMethod
+	BeforeMethod
+		Test 4
+	AfterMethod
+AfterTest
+
+
+===============================
+Data Driven Testing
+===============================
+Executing single test case with multiple data set
+
+1. Array
+2. XML file
+3. Excel File
+
+
+=============================
+
+Open Amazon
+Print title
+Click on Sell
+Print title
+
+Open Amazon
+Print title
+Click on Best Sellers
+Print title
+
+Open Amazon
+Print title
+Click on Mobile
+Print title
+
+Open Amazon
+Print title
+Click on Electronics
+Print title
+
+
+=========================
+Modular Framework
+=========================
+- Execute / Skip Single / Multiple Tests
+- Execute tests via XML file
+
+
+Points to be notes about XML File
+1. All the tags are pre-defined
+2. All the tags and values are case sencetive
+3. You cannot alter the sequence of tags
+
+
+========================
+Assertion
+========================
+Way to mark test case as pass or fail
+
+Types
+1. 
+2. 
+
+
+==========================
+BDD
+==========================
+Behavior Driven Development
+
+Cucumber
+
+Component of Cucumber
+
+1. Feature File
+	- Gherkin Language / Syntax (English language)
+	- Contains keywords
+	- Contains Scenarios
+	
+2. Glue Code / Step Def
+	- Normal class
+	- Contains logic / script for your test case
+	- Skaleton
+	- Cucumber Annotations
+
+3. Runner class
+	- Normal class
+	- JUnit annotations
+	- Used to execute the script
+
+Steps for Creating Cucumber project
+1. File -> New -> Project -> Maven Project
+2. Select Add Project to Working set (Checkbox) -> Next
+3. Type io.cucumber in Filter text box -> Select io.cucumber filter and click on next
+4. Type group id (Company name) & artifact id (Project Name) (Both should same) -> Next
+5. Wait for some time till project get created
+6. Delete readymade package inside src/test/java
+7. Open https://github.com/cucumber/cucumber-java-skeleton/commit/d7249b50c570816eba27ce94557e1de7e9b0f97
+8. Click on Expand all button
+9. Copy the code from line no 11 <properties> to line to 41 </dependencies>
+10. Open pom.xml file
+11. Select <properties> to </dependencies> (Line no 12 to line no 59) & delete it
+12. Paste the code which you have copied from above link
+13. Make following changes in pom.xml file
+	a. Java version to 11
+	b. Remove <cucumber.version>6.8.2</cucumber.version>
+	c. Remove
+		<maven.compiler.version>3.8.1</maven.compiler.version>
+	        <maven.surefire.version>2.22.2</maven.surefire.version>
+14. Save this file
+15. Right click on folder inside src/test/resources -> file -> give the name with extention .feature
+16. Create feature file and execute it
+17. Copy the code from console
+18. Create package with name com.StepDef
+19. Create a normal class (without main) in this package. Try to match the name with feature file
+20. Create package with name com.Runner
+19. Create a normal class (without main) in this package. Try to match the name with feature file
+
+
+=================================
+Feature File
+=================================
+1. Feature: -> Requirement
+2. Scenario: -> Test condition
+3. Given -> Pre-requisite
+4. When -> Steps
+5. And/Or -> Used to combine multiple stepes
+6. Then -> Exepected Result
+7. Background: -> To avoid multiple Given statements
+8. Examples: -> Used to pass the data to test case
+9. Scenario Outline: -> Used in combination of Examples to implement DDF
+
+================================
+Check Title of Google
+================================
+1. Open google
+2. Read the title
+3. Check that title is Google
+=============================
+Feature: Check Google Title
+Scenario: To validate title of Google
+Given Open google
+When Read the title of page
+Then The title should be Google
+
+
+================================
+Search functionality on google
+================================
+1. Open Google
+2. Enter valid valid keyword to search
+3. Hit Enter
+4. Valid search result should display
+================================
+Feature: Google search functionality
+Scenario: Validate search functionality of google
+Given Open google page
+When Enter valid keyword in search box
+And Hit enter
+Then search result should display
+
+=================================
+Tags in Cucumber
+=================================
+Desinged for execution or skiping any scenario
+
+Every tag should start with @
+
+
+
+================================
+Hooks
+================================
+@Before
+@After
+
+HOOKS ARE NEVER THE PART OF FEATURE 
